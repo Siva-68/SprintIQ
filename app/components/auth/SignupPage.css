@@ -1,0 +1,113 @@
+/* Ensure full viewport height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full screen background */
+.signup-page {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0ebff, #f0f4ff);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card styling */
+.signup-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* GitHub logo in gradient box */
+.signup-logo {
+  margin: 0 auto 20px auto;
+  background: linear-gradient(135deg, #2d8cff, #5c5cff);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  color: #fff;
+}
+
+/* Title and subtitle */
+.signup-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.signup-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Form inputs */
+.signup-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.signup-form input:focus {
+  border-color: #2d8cff;
+  box-shadow: 0 0 0 2px rgba(45, 140, 255, 0.2);
+}
+
+/* Submit button */
+.signup-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #2d8cff, #5c5cff);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+  background: linear-gradient(135deg, #246ed9, #4a4ad9);
+}
+
+/* Footer */
+.signup-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-footer span {
+  color: #2d8cff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 9999;
+}
+
+.signup-card,
+.signup-form {
+  pointer-events: auto;
+}

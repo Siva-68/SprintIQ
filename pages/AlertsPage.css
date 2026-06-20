@@ -1,0 +1,567 @@
+.al-root { padding: 22px; min-height: 100vh; }
+.al-top { display:flex; gap:16px; align-items:flex-start; justify-content:space-between; }
+.al-back { border:1px solid #e6eef6; background:#fff; padding:10px 14px; border-radius:999px; font-weight:600; cursor:pointer; }
+.al-title h1 { margin:0; font-size:34px; }
+.al-title p { margin:6px 0 0; color:#556; }
+
+.al-controls { display:flex; gap:12px; align-items:center; }
+.al-controls select { min-width:360px; padding:10px 12px; border-radius:999px; border:1px solid #e6eef6; background:#fff; }
+.al-refresh { padding:10px 16px; border-radius:999px; border:0; background:#3b82f6; color:#fff; font-weight:700; cursor:pointer; }
+
+.al-error { margin-top:12px; background:#ffe5e5; color:#8a1f1f; padding:10px 12px; border-radius:12px; border:1px solid #ffc6c6; }
+
+.al-kpis { margin-top:18px; display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
+.al-kpiCard { background:#fff; border:1px solid #e6eef6; border-radius:16px; padding:14px 16px; box-shadow:0 8px 18px rgba(0,0,0,.04); }
+.al-kpiRow { display:flex; align-items:center; justify-content:space-between; color:#445; font-weight:600; }
+.al-kpiValue { font-size:30px; margin-top:6px; font-weight:800; }
+.al-criticalText { color:#ef4444; }
+.al-warningText { color:#f97316; }
+
+.al-tabs { margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
+.al-tabs button { display:flex; gap:10px; align-items:center; border:1px solid #e6eef6; background:#fff; border-radius:999px; padding:10px 14px; cursor:pointer; font-weight:700; }
+.al-tabs button.active { background:#0b1220; color:#fff; border-color:#0b1220; }
+.al-tabCount { background:rgba(0,0,0,.06); padding:2px 8px; border-radius:999px; font-size:12px; }
+.al-tabs button.active .al-tabCount { background:rgba(255,255,255,.18); }
+
+.al-list { margin-top:16px; display:flex; flex-direction:column; gap:12px; }
+.al-loading, .al-empty { background:#fff; border:1px dashed #d8e4f2; border-radius:16px; padding:18px; color:#556; }
+
+.al-card { background:#fff; border:1px solid #e6eef6; border-radius:16px; padding:14px; box-shadow:0 10px 22px rgba(0,0,0,.05); }
+.al-card.isCritical { border-color:#ffd1d1; background:linear-gradient(#fff, #fff7f7); }
+.al-cardHead { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+.al-cardLeft { display:flex; gap:12px; align-items:flex-start; }
+.al-ic { width:38px; height:38px; border-radius:12px; background:#eef6ff; display:flex; align-items:center; justify-content:center; }
+.al-cardTitle { font-weight:900; }
+.al-cardSub { color:#667; margin-top:3px; font-size:13px; }
+
+.ap-sev { padding:6px 10px; border-radius:999px; font-weight:900; font-size:12px; border:1px solid transparent; }
+.ap-critical { background:#ffe5e5; color:#b42323; border-color:#ffc6c6; }
+.ap-warning { background:#fff3e6; color:#9a4a00; border-color:#ffd3a8; }
+.ap-info { background:#eef6ff; color:#215bbb; border-color:#cfe3ff; }
+
+.al-cardBody { margin-top:10px; }
+.al-msg { color:#334; line-height:1.45; }
+.al-actionBox { margin-top:10px; background:#f6fbff; border:1px solid #dbeafe; border-radius:14px; padding:10px 12px; }
+.al-actionTitle { font-weight:900; margin-bottom:4px; }
+.al-actionText { color:#334; }
+
+.al-meta { margin-top:10px; color:#667; font-size:12px; }
+.al-cardBtns { display:flex; gap:10px; margin-top:12px; }
+.al-btnGhost { border:1px solid #e6eef6; background:#fff; padding:10px 12px; border-radius:12px; font-weight:800; cursor:pointer; }
+.al-btnPrimary { border:0; background:#0b1220; color:#fff; padding:10px 12px; border-radius:12px; font-weight:900; cursor:pointer; }
+
+
+
+/* ✅ Light blue dashboard background */
+.al-root {
+  background: linear-gradient(
+    180deg,
+    #f5f9ff 0%,
+    #f8fbff 60%,
+    #ffffff 100%
+  );
+}
+
+.al-modalOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+.al-modal{
+  width: min(720px, 96vw);
+  background: #0f1526;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.al-modalHead{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.al-modalClose{
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.al-modalBody{ padding: 16px 18px; }
+.al-modalTitle{ font-size: 18px; font-weight: 700; color:#fff; }
+.al-modalSub{ opacity:0.8; margin-top: 4px; font-size: 13px; }
+.al-modalMsg{ margin-top: 12px; opacity: 0.95; line-height: 1.5; }
+.al-modalSection{ margin-top: 14px; }
+.al-modalSectionTitle{ font-weight: 700; margin-bottom: 8px; }
+.al-modalPre{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 10px;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+
+/* Disable tabs nicely */
+.al-tabs button.isDisabled{
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Modal layout */
+.al-modalOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 18px;
+}
+
+.al-modal{
+  width: min(760px, 96vw);
+  background: #0f1526;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+}
+
+.al-modalHead{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.al-modalTitle{ font-size: 18px; font-weight: 800; }
+.al-modalSub{ margin-top: 4px; opacity: 0.8; font-size: 13px; }
+
+.al-modalClose{
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 10px;
+}
+.al-modalClose:hover{ background: rgba(255,255,255,0.06); }
+
+.al-modalBody{ padding: 16px 18px; }
+
+.al-modalBadges{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+
+.al-badgeLive, .al-badgeResolved{
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.al-badgeLive{ background: rgba(0,255,120,0.10); }
+.al-badgeResolved{ background: rgba(255,255,255,0.06); opacity:0.9; }
+
+.al-modalMsg{
+  margin-top: 12px;
+  line-height: 1.55;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.al-modalGrid{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+@media (max-width: 640px){
+  .al-modalGrid{ grid-template-columns: 1fr; }
+}
+
+.al-field{
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.al-fieldLabel{ font-size: 12px; opacity: 0.75; }
+.al-fieldValue{ margin-top: 6px; font-weight: 700; }
+.al-fieldValue.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; opacity: 0.9; }
+
+.al-actionsBox{
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.al-actionsTitle{ font-weight: 900; margin-bottom: 6px; }
+.al-actionsDesc{ opacity: 0.8; font-size: 13px; margin-bottom: 12px; }
+
+.al-actionsRow{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.al-actionBtn{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+.al-actionBtn:hover{
+  background: rgba(255,255,255,0.10);
+}
+
+.al-actionsNote{
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+
+
+/* ---------- Card Buttons (Perfect alignment) ---------- */
+.al-cardBtns{
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.al-btnGhost,
+.al-btnPrimary{
+  height: 40px;
+  min-width: 130px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.al-btnGhost{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.92);
+}
+
+.al-btnGhost:hover{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.18);
+  transform: translateY(-1px);
+}
+
+.al-btnPrimary{
+  background: linear-gradient(135deg, rgba(99,102,241,0.95), rgba(168,85,247,0.92));
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(99,102,241,0.20);
+}
+
+.al-btnPrimary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(99,102,241,0.28);
+}
+
+.al-btnGhost:active,
+.al-btnPrimary:active{
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Small screens: make buttons full width and aligned */
+@media (max-width: 520px){
+  .al-cardBtns{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .al-btnGhost, .al-btnPrimary{
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* ---------- Modal (clean & aligned) ---------- */
+.al-modalOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 18px;
+}
+
+.al-modal{
+  width: min(760px, 96vw);
+  background: radial-gradient(1200px 500px at 20% 0%, rgba(99,102,241,0.18), transparent 60%),
+              #0f1526;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 32px 90px rgba(0,0,0,0.55);
+}
+
+.al-modalHead{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.al-modalTitle{
+  font-size: 18px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.96);
+}
+
+.al-modalSub{
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.80;
+}
+
+.al-modalClose{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.92);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.12s ease, border-color 0.12s ease;
+}
+
+.al-modalClose:hover{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.18);
+  transform: translateY(-1px);
+}
+
+.al-modalBody{
+  padding: 16px 18px 18px;
+}
+
+.al-modalRow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.al-modalMsg{
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.92);
+}
+
+.al-modalSection{
+  margin-top: 14px;
+}
+
+.al-modalSectionTitle{
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.95);
+}
+
+.al-modalPre{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 12px;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgba(255,255,255,0.88);
+}
+
+/* ---------- Severity pills (more modern look) ---------- */
+.ap-sev{
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.ap-critical{
+  background: rgba(239,68,68,0.16);
+  color: rgba(255,255,255,0.95);
+}
+
+.ap-warning{
+  background: rgba(245,158,11,0.16);
+  color: rgba(255,255,255,0.95);
+}
+
+.ap-info{
+  background: rgba(59,130,246,0.16);
+  color: rgba(255,255,255,0.95);
+}
+
+
+/* =========================
+   UI TWEAKS (As Requested)
+   - Remove page bg
+   - Light KPI colors
+   - Better heading alignment
+========================= */
+
+/* ✅ Remove background color from page */
+.al-root {
+  background: #ffffff !important;   /* no bg color */
+}
+
+/* ✅ Top bar alignment (professional) */
+.al-top {
+  align-items: center !important;
+  gap: 18px;
+  padding-bottom: 6px;
+}
+
+/* Make title block properly aligned */
+.al-title {
+  flex: 1;
+  min-width: 260px;
+}
+
+.al-title h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  color: #0b1220;
+  line-height: 1.15;
+}
+
+.al-title p {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  color: #5b6473;
+  line-height: 1.4;
+}
+
+/* ✅ KPI cards with light colors */
+.al-kpiCard {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+}
+
+/* Light color tints per KPI */
+.al-kpis .al-kpiCard:nth-child(1) {
+  background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(255,255,255,0.85));
+}
+.al-kpis .al-kpiCard:nth-child(2) {
+  background: linear-gradient(135deg, rgba(239,68,68,0.10), rgba(255,255,255,0.85));
+}
+.al-kpis .al-kpiCard:nth-child(3) {
+  background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(255,255,255,0.85));
+}
+
+/* Make KPI text readable */
+.al-kpiRow {
+  color: #0b1220;
+}
+.al-kpiValue {
+  color: #0b1220;
+}
+
+/* Keep your existing critical/warning highlight colors but softer */
+.al-criticalText { color: #e11d48; }  /* softer red */
+.al-warningText { color: #d97706; }   /* softer orange */
+
+/* ✅ Keep meta badges light (not dark) */
+.al-meta span {
+  background: rgba(15, 23, 42, 0.04) !important;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  color: #5b6473;
+}
+
+/* ✅ Cards should stay white */
+.al-card {
+  background: #ffffff !important;
+}
+
+/* Keep critical card tint subtle */
+.al-card.isCritical {
+  background: linear-gradient(#ffffff, rgba(239, 68, 68, 0.04)) !important;
+}
+
+
+
+
+
+/* =========================
+   Severity based card colors
+========================= */
+
+/* 🔴 Critical – very light red */
+
+/* 🟡 Warning – very light yellow */
+.al-card.sev-WARNING {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+/* 🔵 Info – very light blue */
+.al-card.sev-INFO {
+  background: #f5f9ff;
+  border-color: #cfe3ff;
+}
+
+
+
+/* ==== FORCE severity colors (put at END of file) ==== */
+.al-card.sev-CRITICAL {
+  background: #fbf8f8 !important;
+  border-color: #e9e3e3 !important;
+}
+
+.al-card.sev-WARNING {
+  background: #fffbeb !important;
+  border-color: #fde68a !important;
+}
+
+.al-card.sev-INFO {
+  background: #f5f9ff !important;
+  border-color: #cfe3ff !important;
+}

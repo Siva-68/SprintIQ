@@ -1,0 +1,102 @@
+/* LoginPage.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f2fe 0%, #e0e7ff 100%);
+  padding: 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+  background: linear-gradient(to right, #2563eb, #4f46e5);
+}
+
+.login-footer {
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.login-footer span {
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.text-error {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-success {
+  color: #16a34a;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}

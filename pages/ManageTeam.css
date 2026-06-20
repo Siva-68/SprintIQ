@@ -1,0 +1,592 @@
+mg-root {
+   background: #f4f8ff; 
+  min-height: 100vh;
+  padding: 22px 28px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.mg-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e9edf3;
+}
+
+.mg-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: transparent;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.mg-back:hover {
+  background: #f3f4f6;
+}
+
+.mg-title h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: #111827;
+}
+.mg-sub {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.mg-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mg-primary {
+  background: #0b0f1a;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+.mg-close {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.mg-wrap {
+  padding-top: 18px;
+}
+
+
+
+.mg-card {
+  border: 1px solid #e9edf3;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
+  background: #ffffff;
+}
+
+.mg-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.mg-card-title {
+  font-weight: 900;
+  color: #111827;
+}
+
+.mg-pill {
+  background: #eef2ff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.mg-list {
+  display: grid;
+  gap: 12px;
+}
+
+
+
+.mg-row {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  transition: all 0.18s ease;
+  background: #ffffff;
+}
+
+
+.mg-row:hover {
+  background: #f3f4f6;        /* soft grey */
+  border-color: #dbe3f3;
+  box-shadow: 0 12px 26px rgba(17, 24, 39, 0.08);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+.mg-left {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+}
+
+.mg-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: #111827;
+}
+
+.mg-info {
+  min-width: 0;
+}
+
+.mg-name {
+  font-weight: 900;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mg-leader {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fbbf24;
+  color: #111827;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.mg-email {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mg-meta {
+  margin-top: 8px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.mg-tasks {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mg-chip {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.mg-chip.removable {
+  padding-right: 6px;
+}
+.mg-chip.removable button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 900;
+  margin-left: 6px;
+}
+
+.mg-more {
+  font-weight: 800;
+  color: #111827;
+}
+
+.mg-none {
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.mg-right {
+  display: flex;
+  gap: 10px;
+}
+
+.mg-icon {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.mg-icon:hover {
+  background: #f9fafb;
+}
+.mg-icon.danger {
+  color: #ef4444;
+  border-color: #fecaca;
+}
+.mg-icon.danger:hover {
+  background: #fee2e2;
+}
+
+/* Modal */
+.mg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.mg-modal {
+  width: min(620px, 96vw);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.mg-modal-head {
+  padding: 18px 18px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.mg-modal-head h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+.mg-modal-head p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.mg-x {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+}
+.mg-x:hover {
+  background: #f3f4f6;
+}
+
+.mg-modal-body {
+  padding: 12px 18px 18px;
+  display: grid;
+  gap: 10px;
+}
+.mg-modal-body label {
+  font-size: 12px;
+  font-weight: 900;
+  color: #111827;
+  margin-top: 6px;
+}
+.mg-modal-body input,
+.mg-modal-body select {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  outline: none;
+  font-size: 14px;
+}
+.mg-modal-body input:focus,
+.mg-modal-body select:focus {
+  border-color: #2547ff;
+  box-shadow: 0 0 0 4px rgba(37, 71, 255, 0.12);
+}
+
+.mg-task-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mg-addchip {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+}
+.mg-addchip:hover {
+  background: #f9fafb;
+}
+
+.mg-chipbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mg-error {
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 800;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.mg-modal-actions {
+  padding: 14px 18px 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #eef2f7;
+}
+.mg-cancel {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.mg-cancel:hover {
+  background: #f9fafb;
+}
+
+
+.mg-topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;  /* left | center | right */
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e9edf3;
+}
+
+.mg-title {
+  display: none; /* remove old */
+}
+
+.mg-title-center {
+  text-align: center;
+}
+
+.mg-title-center h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.mg-title-center .mg-sub {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.mg-actions {
+  justify-self: end; /* push buttons to right */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.mg-secondary{
+  background: #1f2937;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.mg-secondary:disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+/* ✅ Page spacing (top + sides) */
+.mg-root{
+  background:#f4f8ff;
+  min-height:100vh;
+  padding: 44px 22px 28px; /* more top space */
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+/* ✅ Center the entire content */
+.mg-wrap{
+  max-width: 920px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* ✅ Team Members big card becomes clean and not too wide */
+.mg-card{
+  background:#fff;
+  border: 1px solid rgba(17,24,39,0.08);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(17,24,39,0.06);
+}
+
+/* ✅ Members list becomes centered stacked cards */
+.mg-list{
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* ✅ Each member looks like a separate compact card */
+.mg-row{
+  width: 100%;
+  border: 1px solid rgba(17,24,39,0.10);
+  border-radius: 18px;
+  padding: 16px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* ✅ Hover: clean premium effect */
+.mg-row:hover{
+  transform: translateY(-3px);
+  border-color: rgba(37,71,255,0.25);
+  box-shadow: 0 14px 30px rgba(17,24,39,0.10);
+  background: #fbfcff;
+}
+
+/* ✅ Left side stays tidy */
+.mg-left{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  min-width: 0;
+  flex: 1;
+}
+
+.mg-info{
+  min-width: 0;
+}
+
+.mg-name{
+  font-weight: 900;
+  font-size: 15px;
+  color:#111827;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* prevent long email overflow */
+.mg-email{
+  margin-top: 6px;
+  color:#6b7280;
+  font-size: 13px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 520px;
+}
+
+/* ✅ meta becomes cleaner */
+.mg-meta{
+  margin-top: 10px;
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color:#6b7280;
+}
+
+/* ✅ Right action buttons aligned properly */
+.mg-right{
+  display:flex;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+/* ✅ Small “pop in” animation */
+@keyframes popIn{
+  from{ opacity:0; transform: translateY(10px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+.mg-row{
+  animation: popIn .25s ease both;
+}
+
+/* ✅ Mobile: row becomes stacked and neat */
+@media (max-width: 700px){
+  .mg-root{ padding: 34px 14px 18px; }
+  .mg-row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .mg-right{
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .mg-email{ max-width: 100%; }
+}
+.mg-row{
+  overflow: hidden;   /* 👈 ADD THIS */
+}
+.mg-left{
+  flex: 1;
+  min-width: 0;   /* 👈 VERY IMPORTANT */
+}
+
+/* ✅ Fix overflow: padding/border must be included inside width */
+.mg-card, .mg-row, .mg-list, .mg-wrap,
+.mg-card * , .mg-row *{
+  box-sizing: border-box;
+}
+
+/* ✅ Ensure list never allows children to overflow */
+.mg-list{
+  width: 100%;
+}
+
+/* ✅ Member card must never exceed parent width */
+.mg-row{
+  width: 100%;
+  max-width: 100%;
+  margin: 0;          /* remove auto-centering that can cause mismatch */
+}
+.mg-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+}
